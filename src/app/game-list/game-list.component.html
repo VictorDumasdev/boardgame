@@ -1,0 +1,22 @@
+<div class="search-container">
+    <label>Search games  </label>
+    <input class="search-input" placeholder="Catan" [(ngModel)]="searchGame" (change)="callApiSearch()">
+</div>
+
+<mat-grid-list cols="10" rowHeight="400px">
+    <mat-grid-tile *ngFor="let game of apiGames" [colspan]="2" [rowspan]="1">
+            <mat-card class="mat-elevation-z4 game-card">
+                <mat-card-header>
+                <mat-card-title>{{game.name}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{game.imageUrl}}" class="card-image">
+                <mat-card-content>
+                <div class="info-wrapper">
+                    <p><mat-icon class="card-icon">people</mat-icon>{{game.players}} p</p>
+                    <p><mat-icon class="card-icon">watch_later</mat-icon> {{game.playtime}} mins</p>
+                </div>
+                <div class="add-game">Add to your games</div>
+                </mat-card-content>
+            </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
