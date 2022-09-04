@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GameType } from '../types/game.types';
-import { FactoryTarget } from '@angular/compiler';
 
 @Component({
   selector: 'app-game-list',
